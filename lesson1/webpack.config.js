@@ -1,17 +1,23 @@
-'use strict';
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const webpack = require('webpack');
+//const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    entry:  "./home",
-    output: {
-        filename: "./build.js",
-        library:  "home"
-    },
-    mode:"development",
-    optimization: {
-        // We no not want to minimize our code.
-        minimize: false
-    },
+	mode: 'development',
+	entry: './home.js',
+	output: {
+		path: __dirname + '/dist',
+		filename: 'build.js',
+		libraryTarget: 'var',
+		library: 'home',
+		//filename: '[name].[chunkhash:8].js'
+	},
+	devtool: 'source-map',
+	module: {
+		rules: [{
+			enforce: 'pre',
+			test: /\.(js|jsx)$/,
+			exclude: /node_modules/,
+			use: 'eslint-loader'
+		}
+		]
+	}
 };

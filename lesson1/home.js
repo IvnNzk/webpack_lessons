@@ -1,7 +1,5 @@
-'use strict';
-
 import welcome from './welcome';
 
-welcome("home");
+welcome('Fuuu1');
 
 exports.welcome = welcome;
