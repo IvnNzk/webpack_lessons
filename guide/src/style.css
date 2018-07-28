@@ -1,0 +1,12 @@
+@@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('./Montserrat-Regular.woff') format('woff'),
+  url('./Montserrat-Regular.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: 'Montserrat', sans-serif;
+}
